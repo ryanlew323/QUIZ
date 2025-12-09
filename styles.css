@@ -1,0 +1,150 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #E8F4F8; /* CAMBIO: Antes era #DEF9C4 (verde claro) */
+}
+
+.contenedor {
+  background-color: #fff;
+  padding: 25px; /* CAMBIO: Antes era 20px */
+  border-radius: 10px; /* CAMBIO: Antes era 8px */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  text-align: center;
+}
+
+.info-juego{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px; /* CAMBIO: Añadido margen inferior */
+}
+
+.contador-preguntas {
+  font-size: 14px;
+  color: #2C3E50; /* CAMBIO: Antes era #333 */
+  font-weight: bold; /* CAMBIO: Añadido negrita */
+}
+
+#puntaje {
+  display: none;
+  font-size: 14px;
+  color: #2C3E50; /* CAMBIO: Antes era #333 */
+  font-weight: bold; /* CAMBIO: Añadido negrita */
+}
+
+h1 {
+  color: #2980B9; /* CAMBIO: Nuevo estilo añadido para el título */
+  margin-bottom: 20px; /* CAMBIO: Nuevo margen */
+}
+
+#pregunta {
+  font-size: 18px; /* CAMBIO: Aumentado de tamaño implícito */
+  color: #2C3E50; /* CAMBIO: Nuevo color */
+  margin-bottom: 25px; /* CAMBIO: Aumentado margen */
+  font-weight: 600; /* CAMBIO: Añadido peso de fuente */
+  line-height: 1.4; /* CAMBIO: Mejorada legibilidad */
+}
+
+#opciones button {
+  width: 100%;
+  padding: 12px; /* CAMBIO: Antes era 10px */
+  margin: 8px 0; /* CAMBIO: Antes era 5px 0 */
+  background-color: #3498DB; /* CAMBIO: Antes era #50B498 (verde) */
+  color: white;
+  border: none;
+  border-radius: 8px; /* CAMBIO: Antes era 5px */
+  cursor: pointer;
+  font-size: 16px; /* CAMBIO: Añadido tamaño de fuente */
+  transition: all 0.3s ease; /* CAMBIO: Añadida transición */
+}
+
+#opciones button:hover {
+  background-color: #2980B9; /* CAMBIO: Antes era #468585 */
+  transform: translateY(-2px); /* CAMBIO: Efecto de elevación al hover */
+}
+
+#opciones button.correcto {
+  background-color: #27AE60; /* CAMBIO: Antes era #4a9148 */
+}
+
+#opciones button.incorrecto {
+  background-color: #E74C3C; /* CAMBIO: Antes era #EE4E4E */
+}
+
+.botones-navegacion {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px; /* CAMBIO: Antes era 20px */
+}
+
+#boton-siguiente,
+#boton-reiniciar {
+  padding: 12px 20px; /* CAMBIO: Antes era solo 10px */
+  border: none;
+  border-radius: 8px; /* CAMBIO: Antes era 5px */
+  cursor: pointer;
+  width: 45%; /* CAMBIO: Antes era 30% */
+  font-size: 16px; /* CAMBIO: Añadido tamaño de fuente */
+  font-weight: bold; /* CAMBIO: Añadido negrita */
+  transition: all 0.3s ease; /* CAMBIO: Añadida transición */
+}
+
+#boton-siguiente {
+  background-color: #2C80B9; /* CAMBIO: Antes era #2C4E80 */
+  color: white;
+}
+
+#boton-siguiente:hover {
+  background-color: #1A5276; /* CAMBIO: Antes era #00215E */
+  transform: translateY(-2px); /* CAMBIO: Efecto de elevación */
+}
+
+#boton-reiniciar {
+  background-color: #7F8C8D; /* CAMBIO: Antes era #677D6A */
+  color: white;
+  display: none;
+}
+
+#boton-reiniciar:hover {
+  background-color: #5D6D7E; /* CAMBIO: Antes era #40534C */
+  transform: translateY(-2px); /* CAMBIO: Efecto de elevación */
+}
+
+@media (max-width: 600px) {
+    .contenedor-principal {
+        padding: 20px 15px;
+    }
+    
+    .texto-especial {
+        padding: 25px;
+    }
+    
+    .titulo-texto-especial {
+        font-size: 24px;
+    }
+    
+    .titulo-resultados {
+        font-size: 24px;
+    }
+    
+    .contenido-texto-especial {
+        font-size: 16px;
+    }
+    
+    .puntaje {
+        font-size: 42px;
+    }
+    
+    .botones {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    button {
+        width: 100%;
+        max-width: 300px;
+    }
+}

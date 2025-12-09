@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Cuestionario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesR.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <div class="texto-especial">
+            <div class="titulo-texto-especial">Te Amo</div>
+            <div class="contenido-texto-especial">
+                <p><strong>¿Quieres saber por qué te amo y por qué mi corazón te eligió?</strong></p>
+                
+                <p>Vi tus defectos, vi tus inseguridades, tus traumas y dudas. Vi una parte de tu pasado, vi cómo ciertas cosas te lastiman, pero te amé de todos modos porque por más lastimado que creas que estás, por más que creas que eres un desastre, vi un corazón tan hermoso que merecía ser amado más que nadie.</p>
+                
+                <p>Desde que hablé contigo y te conocí mejor sentí cómo si hubiese encontrado esa pieza que faltaba en mi rompecabezas, no sabes lo feliz que fui siendo tu pareja. Quiero que sepas que de mí no vas a escuchar un "te mereces a alguien mejor" porque yo sí pienso mejorar por ti y haría cualquier cosa, hasta lo imposible, para verte feliz.</p>
+                
+                <p>Vales todo, el tiempo, la espera, el esfuerzo, cada intento, cada lucha, cada obstáculo. <strong>Te amo y siempre te amaré.</strong></p>
+            </div>
+        </div>
+        
+        <div class="seccion-puntaje">
+            <div class="titulo-resultados">Resultados del Cuestionario de Enfermería</div>
+            <div class="puntaje" id="puntaje-final">0/5</div>
+            <div class="mensaje-resultado" id="mensaje-resultado">
+                <!-- El mensaje se actualizará con JavaScript -->
+            </div>
+            
+            <div class="botones">
+                <button id="boton-reiniciar" onclick="reiniciarCuestionario()">Reiniciar Cuestionario</button>
+                <button id="boton-volver" onclick="volverAlInicio()">Volver al Inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Obtener el puntaje guardado en localStorage
+        const puntaje = localStorage.getItem('puntajeCuestionario') || 0;
+        const totalPreguntas = localStorage.getItem('totalPreguntas') || 5;
+        
+        // Mostrar el puntaje
+        document.getElementById('puntaje-final').textContent = `${puntaje}/${totalPreguntas}`;
+        
+        // Mostrar un mensaje según el puntaje
+        const mensajeElemento = document.getElementById('mensaje-resultado');
+        const porcentaje = (puntaje / totalPreguntas) * 100;
+        
+        if (porcentaje === 100) {
+            mensajeElemento.innerHTML = '<strong>¡Excelente! 🎉</strong> Has respondido todas las preguntas correctamente.';
+            document.getElementById('puntaje-final').style.color = '#27AE60';
+        } else if (porcentaje >= 70) {
+            mensajeElemento.innerHTML = '<strong>¡Muy bien! 👍</strong> Buen trabajo, pero aún puedes mejorar.';
+            document.getElementById('puntaje-final').style.color = '#F39C12';
+        } else if (porcentaje >= 50) {
+            mensajeElemento.innerHTML = '<strong>¡Buen intento! 😊</strong> Necesitas repasar más los conceptos.';
+            document.getElementById('puntaje-final').style.color = '#F39C12';
+        } else {
+            mensajeElemento.innerHTML = '<strong>¡Necesitas practicar más! 📚</strong> Te recomiendo estudiar los conceptos básicos de enfermería.';
+            document.getElementById('puntaje-final').style.color = '#E74C3C';
+        }
+        
+        // Función para reiniciar el cuestionario
+        function reiniciarCuestionario() {
+            window.location.href = "index.html";
+        }
+        
+        // Función para volver al inicio
+        function volverAlInicio() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
